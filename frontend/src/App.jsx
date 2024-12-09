@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import { Footer, Header, Navbar} from "./components/Index"
+import { Footer, Header, Navbar} from "./components"
 import {Cart, Home, Login, Register, Pizza, Profile, NotFound} from "./pages"
 import { CartProvider } from "./contexts/CartContext";
 
