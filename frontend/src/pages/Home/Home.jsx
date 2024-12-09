@@ -1,9 +1,9 @@
 import './Home.css'
 import { useState,useEffect } from "react";
-import CardPizza from "../../components/CardPizza";
+import {CardPizza} from "../../components/CardPizza/CardPizza";
 
 
-const Home = () => {
+export const Home = () => {
 
     const [pizzas, setPizzas] = useState([])
     const backEnd= "http://localhost:5000/api/pizzas"
@@ -24,6 +24,7 @@ const Home = () => {
         (pizza) => (
           <div className="col" key={pizza.id}>
           <CardPizza
+          id ={pizza.id}
           name={pizza.name}
           img={pizza.img}
           ingredients={pizza.ingredients}
@@ -38,5 +39,5 @@ const Home = () => {
     )
   }
   
-  export default Home
+
 

@@ -1,21 +1,15 @@
 import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import Header from "./components/Header/Header";
-import Navbar from "./components/Navbar/Navbar";
-import Home from "./pages/Home/Home";
-import Footer from "./components/Footer/Footer";
-import Cart from "./pages/Cart/Cart";
-import Profile from "./pages/Profile/Profile";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
-import Pizza from "./pages/Pizza";
-import NotFound from "./pages/NotFound/NotFound";
+import { Footer, Header, Navbar} from "./components/Index"
+import {Cart, Home, Login, Register, Pizza, Profile, NotFound} from "./pages"
+import { CartProvider } from "./contexts/CartContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <CartProvider>
         <Header />
         <Navbar />
         <Routes>
@@ -29,6 +23,7 @@ function App() {
           <Route path="*" element={<NotFound/>} />
         </Routes>
         <Footer />
+        </CartProvider>
       </BrowserRouter>
     </>
   );

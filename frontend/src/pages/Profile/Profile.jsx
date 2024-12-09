@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-const Profile = () => {
+export const Profile = () => {
   return (
     <>
     <div className="perfil">
@@ -12,4 +12,3 @@ const Profile = () => {
   )
 }
 
-export default Profile

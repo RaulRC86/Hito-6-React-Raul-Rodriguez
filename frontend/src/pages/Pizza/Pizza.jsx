@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
-import CardPizza from "../components/CardPizza"
+import {CardPizza} from "../../components/CardPizza/CardPizza"
 
 
 
-const Pizza = () => {
+export const Pizza = () => {
 
   const [pizzas, setPizzas] = useState([])
   const backEnd= "http://localhost:5000/api/pizzas/p001"
@@ -35,4 +35,3 @@ const Pizza = () => {
   )
 }
 
-export default Pizza

@@ -1,7 +1,7 @@
 import './Register.css'
 import { useState } from "react";
 
-const Register = () => {
+export const Register = () => {
   const [email, setEmail] = useState("");
   const [contraseña, setContraseña] = useState("");
   const [confirmar, setConfirmar] = useState("");
@@ -75,4 +75,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+

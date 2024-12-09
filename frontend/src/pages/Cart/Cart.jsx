@@ -1,28 +1,10 @@
-import { useState } from "react";
-import {pizzaCart} from "../../assets/JS/pizzas"
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 import "./Cart.css"
 
+export const Cart = () => {
+  const {cart, handleIncrease, handleDecrease, total}= useContext(CartContext)
 
-const Cart = () => {
-  const [cart, setCart] = useState(pizzaCart);
-
-  const handleIncrease = (id) => {
-    setCart((prevCart) =>
-      prevCart.map((pizza) =>
-        pizza.id === id ? { ...pizza, count: pizza.count + 1 } : pizza
-      )
-    );
-  };
-  const handleDecrease = (id) => {
-    setCart((prevCart) =>
-      prevCart
-        .map((pizza) =>
-          pizza.id === id ? { ...pizza, count: pizza.count - 1 } : pizza
-        )
-        .filter((pizza) => pizza.count > 0)
-    );
-  };
-  const total = cart.reduce((acc, pizza) => acc + pizza.price * pizza.count, 0);
   return (
     <div className="container mt-5">
       <h2>Carrito de Compras</h2>
@@ -69,4 +51,3 @@ const Cart = () => {
   );
 };
 
-export default Cart;

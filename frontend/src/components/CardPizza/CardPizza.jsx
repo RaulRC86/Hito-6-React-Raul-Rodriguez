@@ -1,6 +1,13 @@
 import PropTypes from "prop-types";
+import { useContext } from "react";
+import { CartContext } from "../../contexts/CartContext";
 
-const CardPizza = ({ name, desc, img, ingredients, price }) => {
+
+export const CardPizza = ({ name, desc, img, ingredients, price, id }) => {
+       const {handleAgrega} = useContext(CartContext)
+
+
+
   return (
     <div className="card m-3" style={{width:"18rem"}}>
       <img src={img} className="card-img-top" alt={name} />
@@ -13,8 +20,8 @@ const CardPizza = ({ name, desc, img, ingredients, price }) => {
         ))}
       </ul>
       <p className="mt-1 fw-bold">Precio: ${price}</p>
-      <a href="#" className="btn btn-light">Ver más 👀</a>
-      <a href="#" className="btn btn-dark">Añadir 🛒</a>
+      <button className="btn btn-light">Ver más 👀</button>
+      <button className="btn btn-dark" onClick={() => handleAgrega(id)}>Añadir 🛒</button>
       </div>
     </div>
   );
@@ -28,7 +35,5 @@ CardPizza.propTypes = {
   ingredients: PropTypes.arrayOf(PropTypes.string).isRequired, 
   price: PropTypes.number.isRequired, 
 };
-
-export default CardPizza;
 
 

@@ -1,7 +1,10 @@
+import { useContext } from 'react'
+import { CartContext } from '../../contexts/CartContext'
 import './Navbar.css'
 import { Link } from "react-router-dom"
 
-const Navbar=() =>{
+export const Navbar=() =>{
+    const {total} = useContext(CartContext)
     return(
         <>
     <nav>
@@ -12,11 +15,10 @@ const Navbar=() =>{
       <button>🔒Logout</button>
       <Link to="/Register"><button className='boton1'>🔐Register</button></Link>
       <div className="totalCompra">
-      <Link to="/Cart"><button className='boton2'>🛒Total: $</button></Link>
+      <Link to="/Cart"><button className='boton2'>🛒Total:$ {total.toFixed(0)}</button></Link>
     </div>
     </nav>
         </>
     )
 }
 
-export  default Navbar
