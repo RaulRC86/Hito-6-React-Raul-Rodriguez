@@ -6,3 +6,9 @@
   padding: 20px;
   margin: 20px;
 }
+form {
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra los elementos horizontalmente */
+  gap: 10px; /* Espaciado entre los elementos */
+}
